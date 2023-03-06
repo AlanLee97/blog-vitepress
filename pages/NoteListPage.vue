@@ -13,20 +13,26 @@
         </div>
       </div>
     </div>
+    <Pagination :total="noteList.length" />
   </div>
 </template>
 
 <script setup>
 
-import { useData } from 'vitepress'
+import { useData, useRouter } from 'vitepress'
+import Pagination from '../components/Pagination.vue';
 const data = useData()
+const router = useRouter()
 // console.log(data);
 
 const noteList = data.theme.value.localData.files
+console.log('alan->noteList', noteList)
+
 
 function toDetail(path) {
+  console.log('alan->path', path)
   if(path) {
-    window.location.href = path
+    router.go(path)
   }
 }
 

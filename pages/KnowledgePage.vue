@@ -2,7 +2,7 @@
   <div class="VPHero page--knowledge">
 
     <div class="list-wrapper">
-      <div class="list-item card" v-for="(item, i) in knowledgeList" :key="item.index + '_' + i">
+      <div class="list-item card" v-for="(item, i) in knowledgeList" :key="item.index + '_' + i" @click="toPage(item.link)">
         <div class="title">{{item.title}}</div>
         <div class="desc">{{item.desc}}</div>
       </div>
@@ -12,22 +12,35 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vitepress';
+
+
+const router = useRouter()
 const knowledgeList = [
   {
     id: Math.random(),
     title: '前端知识',
     icon: '',
     desc: '111',
-    updateTime: ''
+    updateTime: '',
+    link: '/knowledges/frontend/index'
   },
   {
     id: Math.random(),
     title: '技术知识',
     icon: '',
     desc: '222',
-    updateTime: ''
+    updateTime: '',
+    link: '/knowledges/tech/index'
   }
 ]
+
+function toPage(path) {
+  if(path) {
+    router.go(path)
+  }
+
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +60,7 @@ const knowledgeList = [
         font-size: 1.8rem;
         line-height: 2;
         margin-bottom: 1rem;
+        font-weight: bold;
       }
     }
 
@@ -55,6 +69,9 @@ const knowledgeList = [
       border-radius: 4px;
       padding: 1rem;
       width: 240px;
+      &:hover {
+        border-color: #00EAFF;
+      }
     }
   }
 }
