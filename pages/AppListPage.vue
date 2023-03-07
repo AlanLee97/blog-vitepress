@@ -1,9 +1,7 @@
 <template>
-  <div class="page--home">
-    <h1 class="title">AlanLee の APP</h1>
+  <div class="page--apps">
     <div class="app-list-wrapper">
-      <div class="app-item" v-for="(item, index) in appList" :key="'tool_' + index" @click="toPage(item)">
-        <div class="app-item-bg"></div>
+      <div class="list-item app-item" v-for="(item, index) in appList" :key="'tool_' + index" @click="toPage(item)">
         {{ item.name }}
       </div>
     </div>
@@ -74,8 +72,11 @@ function toPage(item) {
 </script>
 
 <style lang="scss" scoped>
-.page--home {
-  padding: 2rem;
+.page--apps {
+  // padding: 2rem;
+  max-width: 1152px;
+  margin: auto;
+  margin-top: 10rem;
 
   .title {
     margin-bottom: 2rem;
@@ -85,42 +86,20 @@ function toPage(item) {
     flex-wrap: wrap;
     align-items: center;
 
-    .app-item {
-      position: relative;
-      background-color: #fff;
-      border-radius: 1rem;
-      border: solid .1rem #f8f8f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 14rem;
-      height: 6rem;
-      margin-right: 1.6rem;
-      margin-bottom: 2rem;
+    .list-item {
+      margin-right: 16px;
+      margin-bottom: 16px;
       cursor: pointer;
-      box-shadow: .2rem .2rem 1rem #eee;
+    }
 
+    .app-item {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 1rem;
+      width: 24rem;
+      height: 12rem;
       &:hover {
-        color: #42b883ef;
-        border-color: #42b88347;
-        filter: drop-shadow(0 0 4rem #42b88325);
-      }
-
-      .app-item-bg {
-        position: absolute;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        border-radius: 1rem;
-
-        &:hover {
-          background-color: #42b88310;
-          filter: drop-shadow(0 0 4rem #42b88325);
-        }
-      }
-      &:last-child {
-        background: #f8f8f8;
-        color: rgba(102, 102, 102, 0.593);
+        border-color: #00EAFF;
       }
     }
   }

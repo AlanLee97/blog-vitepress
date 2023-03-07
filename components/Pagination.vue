@@ -11,6 +11,8 @@
 <script setup>
 import { ref } from 'vue';
 
+const emit = defineEmits(['change'])
+
 const props = defineProps({
   total: {
     type: Number,
@@ -34,6 +36,7 @@ function getTotalPage(count = 0) {
 
 function setCurrentPage(i) {
   currentPage.value = i
+  emit('change', i)
 }
 </script>
 

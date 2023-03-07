@@ -1,3 +1,5 @@
+import { genSideBarItems } from './index.js'
+
 export function createSidebar() {
   return {
     "/knowledges/frontend/": [
@@ -8,30 +10,12 @@ export function createSidebar() {
           {
             text: "阅读源码",
             collapsed: true,
-            items: [
-              {
-                text: "阅读地图-ref",
-                link: "/knowledges/frontend/vue/read-source/readmap-ref",
-              },
-              {
-                text: "阅读地图-reactive",
-                link: "/knowledges/frontend/vue/read-source/readmap-reactive",
-              },
-              {
-                text: "阅读地图-reactive",
-                link: "/knowledges/frontend/vue/read-source/readmap-reactive",
-              },
-            ],
+            items: genSideBarItems('knowledges/frontend/vue/read-source'),
           },
           {
             text: "问题记录",
             collapsed: true,
-            items: [
-              {
-                text: "vue3reactive定义的对象替换值后不更新视图",
-                link: "/knowledges/frontend/vue/record/question",
-              },
-            ],
+            items: genSideBarItems('knowledges/frontend/vue/record'),
           },
         ],
       },
@@ -42,22 +26,23 @@ export function createSidebar() {
           {
             text: "React知识",
             collapsed: true,
-            items: [
-              {
-                text: "React知识",
-                link: "/knowledges/frontend/react/learn/react-learn",
-              },
-            ],
+            items: genSideBarItems('knowledges/frontend/react/learn')
           },
           {
             text: "问题记录",
             collapsed: true,
-            items: [
-              {
-                text: "react问题记录",
-                link: "/knowledges/frontend/react/record/question",
-              },
-            ],
+            items: genSideBarItems('knowledges/frontend/react/record')
+          },
+        ],
+      },
+      {
+        text: "浏览器",
+        collapsed: true,
+        items: [
+          {
+            text: "浏览器知识",
+            collapsed: true,
+            items: genSideBarItems('knowledges/frontend/browser')
           },
         ],
       },
@@ -65,23 +50,22 @@ export function createSidebar() {
     "/knowledges/tech/": [
       {
         text: "工具",
-        collapsed: true,
+        collapsed: false,
         items: [
           {
             text: "Git",
-            items: [{ text: "Git知识总结", link: "/knowledges/tech/tool/git" }],
+            collapsed: false,
+            items: genSideBarItems('knowledges/tech/tool/git')
           },
           {
             text: "Docker",
-            items: [
-              { text: "Docker常用命令", link: "/knowledges/tech/tool/docker" },
-            ],
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/tool/docker')
           },
           {
             text: "Linux",
-            items: [
-              { text: "Linux常用命令", link: "/knowledges/tech/tool/linux" },
-            ],
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/tool/linux')
           },
         ],
       },

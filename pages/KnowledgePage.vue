@@ -47,6 +47,8 @@ function toPage(path) {
 .page--knowledge {
   max-width: 1152px;
   margin: auto;
+  margin-top: 10rem;
+
 
   .list-wrapper {
     display: flex;

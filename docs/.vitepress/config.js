@@ -1,5 +1,7 @@
-import { filesData } from './scripts/index.js'
+import { filesData, genLastUpdatedFiles } from './scripts/index.js'
 import { createSidebar } from './scripts/theme.js'
+
+genLastUpdatedFiles()
 
 export default {
   title: "AlanLee`s Blog",

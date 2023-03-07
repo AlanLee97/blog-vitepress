@@ -2,10 +2,6 @@ import fs from "fs";
 
 export const filesData = {}
 
-// const reg = /#(.*)\n/
-// const res2 = reg.exec('# aaabbb\n')
-// console.log('alan->', res2[1])
-
 export function getAllMdFiles() {
   const excludeDirs = ['public', '.vitepress', 'index.md']
   let mds = []
@@ -25,8 +21,8 @@ export function getAllMdFiles() {
           mds.push({
             file: curPath,
             link: curPath.replace('docs', '').replace('.md', '.html'),
-            title: ((res && res[1]) || '').trim(),
-            desc: content.substring(0, 100),
+            title: (ele || '').replace('.md', '') || ((res && res[1]) || '').trim(),
+            desc: content.substring(0, 60) + '...',
             updateTime: info.mtime
           });
         }
@@ -55,41 +51,80 @@ export function genLastUpdatedFiles() {
   filesData.data = mds
 }
 
-genLastUpdatedFiles()
-
-export function genarateSidebarViaDir(dir) {
+export function getDirTree(dir) {
   const excludeDirs = ['public', '.vitepress', 'index.md']
   let mds = []
-  let obj = {}
+  let dirTree = {}
 
   const searchFile = (path) => {
     const dirs = fs.readdirSync(path);
-    dirs.forEach(function (ele, index) {
+    dirs.forEach((ele, index) =>  {
       if(!excludeDirs.includes(ele)) {
         const curPath = path + "/" + ele
         const info = fs.statSync(curPath);
         if (info.isDirectory()) {
-          console.log('alan->dir curPath', curPath, ele)
           let dirStrArr = curPath.replace('docs/', '').split('/') || []
-
-          
-          
+          dirStrArr.reduce((pre, cur, i) => {
+            if(!pre[cur]) {
+              pre[cur] = {}
+            }
+            if(i === dirStrArr.length - 1) {
+              pre[cur] = {files: []}
+            }
+            return pre[cur]
+          }, dirTree)
           searchFile(path + "/" + ele);
-          
         } else {
-          // console.log('alan->file ', curPath)
+          let lastObj = {}
+          let pathArr = path.replace('docs/', '').split('/') || []
+          pathArr.reduce((pre, cur, i) => {
+            if (!pre[cur]) {
+              pre[cur] = {}
+            }
+            if(i === pathArr.length - 1) {
+              lastObj = pre[cur]
+            }
+            return pre[cur]
+          }, dirTree)
+          lastObj.files.push({
+            name: ele,
+            path: curPath
+          })
           mds.push(curPath)
-          // obj[ele].filePath = curPath
         }
       }
     });
   }
   searchFile(dir)
-  console.log('alan->obj', obj)
-  return mds
+
+  return {
+    mds,
+    dirTree
+  }
 }
 
-const mds = genarateSidebarViaDir('docs/knowledges')
-console.log('alan->mds', mds)
+export function genSideBarItems(path = '') {
+  const pathArr = path.split('/')
+  const res = getDirTree('docs/knowledges')
+  const newDirTree = JSON.parse(JSON.stringify(res.dirTree))
+  let lastObj = {}
+  pathArr.reduce((pre, cur, i) => {
+    if(!pre[cur]) {
+      pre[cur] = {}
+    }
+    if(i === pathArr.length - 1) {
+      lastObj = pre[cur]
+    }
+    return pre[cur]
+  }, newDirTree)
 
+  const items = [];
+  (lastObj.files || []).forEach(item => {
+    items.push({
+      text: (item.name || '').replace('.md', ''),
+      link: (item.path || '').replace('docs/', '/').replace('.md', '')
+    })
+  })
 
+  return items;
+}
