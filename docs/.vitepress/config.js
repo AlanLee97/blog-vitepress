@@ -4,6 +4,7 @@ import { createSidebar } from './scripts/theme.js'
 genLastUpdatedFiles()
 
 export default {
+  base: '/app/blog/',
   title: "AlanLee`s Blog",
   description: "AlanLee的博客",
   localData: filesData,
