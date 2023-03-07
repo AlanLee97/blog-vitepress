@@ -3,6 +3,10 @@ import { createSidebar } from './scripts/theme.js'
 
 genLastUpdatedFiles()
 
+let sidebar = createSidebar()
+
+console.log('alan->sidebar', JSON.stringify(sidebar))
+
 export default {
   base: '/app/blog/',
   title: "AlanLee`s Blog",
@@ -22,7 +26,7 @@ export default {
       { text: "Apps", link: "/apps/index" },
       { text: "关于", link: "/about/index" },
     ],
-    sidebar: createSidebar(),
+    sidebar: sidebar,
     socialLinks: [{ icon: "github", link: "https://github.com/alanlee97" }],
     footer: {
       // message: 'Released under the MIT License.',

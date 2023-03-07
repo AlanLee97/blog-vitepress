@@ -22,7 +22,9 @@
 import { useData, useRouter } from 'vitepress'
 import { ref } from 'vue'
 import Pagination from '../components/Pagination.vue';
+
 const data = useData()
+console.log('alan->data', data)
 const router = useRouter()
 
 const noteList = ref(data.theme.value.localData.files)
@@ -33,7 +35,7 @@ console.log('alan->noteList', noteList.value)
 
 function toDetail(path) {
   if(path) {
-    router.go(path)
+    router.go(data.site.value.base + path)
   }
 }
 
