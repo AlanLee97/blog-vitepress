@@ -6,5 +6,5 @@ sidebar: false
 <NoteListPage />
 
 <script setup>
-import NoteListPage from '../../pages/NoteListPage.vue';
+import NoteListPage from '../../src/pages/NoteListPage.vue';
 </script>

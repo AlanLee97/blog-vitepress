@@ -9,6 +9,7 @@ console.log('alan->sidebar', JSON.stringify(sidebar))
 
 export default {
   base: '/app/blog/',
+  outDir: '../dist',
   title: "AlanLee`s Blog",
   description: "AlanLee的博客",
   localData: filesData,

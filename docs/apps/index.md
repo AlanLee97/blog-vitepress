@@ -13,5 +13,5 @@ hero:
 <AppListPage />
 
 <script setup>
-  import AppListPage from '../../pages/AppListPage.vue'
+  import AppListPage from '../../src/pages/AppListPage.vue'
 </script>

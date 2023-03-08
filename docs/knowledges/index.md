@@ -13,5 +13,5 @@ hero:
 
 
 <script setup>
-import KnowledgePage from '../../pages/KnowledgePage.vue';
+import KnowledgePage from '../../src/pages/KnowledgePage.vue';
 </script>
