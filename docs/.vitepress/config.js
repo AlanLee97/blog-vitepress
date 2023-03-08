@@ -5,7 +5,7 @@ genLastUpdatedFiles()
 
 let sidebar = createSidebar()
 
-console.log('alan->sidebar', JSON.stringify(sidebar))
+// console.log('alan->sidebar', JSON.stringify(sidebar))
 
 export default {
   base: '/app/blog/',
