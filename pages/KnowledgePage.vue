@@ -39,6 +39,7 @@ function toPage(path = '') {
   if(path) {
     path = (data.site.value.base || '') + path
     path = path.replaceAll('//', '/')
+    console.log('alan->toPage path', path)
     router.go(path)
   }
 
