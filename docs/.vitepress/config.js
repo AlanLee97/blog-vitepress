@@ -17,6 +17,7 @@ export default {
     // 解决语雀防盗链问题
     ["meta", { name: "referrer", content: "no-referrer" }],
   ],
+  lastUpdated: true,
   themeConfig: {
     localData: {
       files: filesData.data
