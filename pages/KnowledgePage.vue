@@ -12,10 +12,10 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vitepress';
-
+import { useRouter, useData } from 'vitepress';
 
 const router = useRouter()
+const data = useData()
 const knowledgeList = [
   {
     id: Math.random(),
@@ -35,8 +35,10 @@ const knowledgeList = [
   }
 ]
 
-function toPage(path) {
+function toPage(path = '') {
   if(path) {
+    path = (data.site.value.base || '') + path
+    path = path.replaceAll('//', '/')
     router.go(path)
   }
 

@@ -24,18 +24,20 @@ import { ref } from 'vue'
 import Pagination from '../components/Pagination.vue';
 
 const data = useData()
-console.log('alan->data', data)
+// console.log('alan->data', data)
 const router = useRouter()
 
 const noteList = ref(data.theme.value.localData.files)
 const currentNoteList = ref([])
 currentNoteList.value = noteList.value.slice(0, 5)
-console.log('alan->noteList', noteList.value)
+// console.log('alan->noteList', noteList.value)
 
 
 function toDetail(path) {
   if(path) {
-    router.go(data.site.value.base + path)
+    path = (data.site.value.base || '') + path
+    path = path.replaceAll('//', '/')
+    router.go(path)
   }
 }
 
