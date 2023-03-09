@@ -54,7 +54,16 @@ export function createSidebar() {
       {
         text: "CSS",
         collapsed: true,
-        items: genSideBarItems('knowledges/frontend/css')
+        items: [
+          {
+            text: 'CSS',
+            items: genSideBarItems('knowledges/frontend/css/common')
+          },
+          {
+            text: 'Flex',
+            items: genSideBarItems('knowledges/frontend/css/flex')
+          }
+        ]
       },
       {
         text: "TypeScript",

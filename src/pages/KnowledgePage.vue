@@ -21,7 +21,7 @@ const knowledgeList = [
     id: Math.random(),
     title: '前端知识',
     icon: '',
-    desc: '111',
+    desc: '记录前端相关知识',
     updateTime: '',
     link: '/knowledges/frontend/index'
   },
@@ -29,7 +29,7 @@ const knowledgeList = [
     id: Math.random(),
     title: '技术知识',
     icon: '',
-    desc: '222',
+    desc: '记录技术相关知识',
     updateTime: '',
     link: '/knowledges/tech/index'
   }

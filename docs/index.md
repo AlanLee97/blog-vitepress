@@ -19,6 +19,7 @@ features:
 - icon: ⚡️
   title: Vite, The DX that can't be beat
   details: Lorem ipsum...
+  link: ''
 - icon: 🖖
   title: Power of Vue meets Markdown
   details: Lorem ipsum...
