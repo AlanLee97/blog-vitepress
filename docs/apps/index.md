@@ -6,7 +6,6 @@ hero:
   image:
     src: /assets/images/apps.svg
     alt: APP
-
 ---
 
 

@@ -2,61 +2,76 @@
   <div class="page--apps">
     <div class="app-list-wrapper">
       <div class="list-item app-item" v-for="(item, index) in appList" :key="'tool_' + index" @click="toPage(item)">
-        {{ item.name }}
+        <div class="poster-wrapper">
+          <img src="../assets/images/poster.png" />
+        </div>
+        <div class="card-content">
+          <h3 class="title">
+            {{ item.name }}
+          </h3>
+          <div class="desc">{{item.desc}}</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { withBase } from 'vitepress'
 import { ref } from 'vue'
+
+
+
+
 
 const list = [
   {
     name: '语你晚安',
     poster: '',
-    path: '/good-night'
+    desc: '订阅晚安然后想你推送「晚安」的小程序',
+    link: '/good-night'
   },
   {
     name: 'AlanLeeの工具箱',
     poster: '',
-    path: '',
+    desc: '一些我自己常用的工具',
     link: 'http://alanlee.top/app/toolbox'
   },
   {
     name: 'el-dragmove',
     poster: '',
-    path: '',
+    desc: '我开源的轻量级的元素拖动js库',
     link: 'https://github.com/AlanLee97/el-dragmove'
   },
   {
     name: '核酸批量查询',
     poster: '',
+    desc: '一个PC端的核酸批量查询工具',
     path: '/detection-batch-query',
-    link: 'https://github.com/AlanLee97/electron-detection-batch-query'
   },
   {
     name: 'U-UI-D',
     poster: '',
-    path: '/u-ui-d',
+    desc: '大学毕业设计项目',
     link: 'https://gitee.com/U-UI-D'
   },
   {
     name: '熊猫约拍',
     poster: '',
-    path: '',
+    desc: '大学参赛项目',
     link: 'https://gitee.com/Panda_Appointment'
   },
   {
     name: '共享作业提醒APP',
     poster: '',
-    path: '',
+    desc: '大学参赛项目',
     link: 'https://github.com/AlanLee97/HomeworkReminder'
   },
   {
     name: '更多APP，待上线...',
     poster: '',
-    path: ''
+    desc: '',
+    link: ''
   }
 ]
 
@@ -94,12 +109,22 @@ function toPage(item) {
 
     .app-item {
       border: 1px solid #eee;
-      border-radius: 4px;
-      padding: 1rem;
-      width: 24rem;
-      height: 12rem;
+      background-color: #fff;
+      border-radius: 8px;
+      width: 28.2rem;
+      height: 27.6rem;
+      overflow: hidden;
       &:hover {
         border-color: #00EAFF;
+      }
+      .poster-wrapper {
+        width: 100%;
+        height: 15.9rem;
+      }
+
+      .card-content {
+        padding: 1rem;
+
       }
     }
   }
