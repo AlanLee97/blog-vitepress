@@ -78,6 +78,7 @@ function handlePageChange(i) {
       justify-content: space-between;
       border-top: 1px solid #eee;
       height: 160px;
+      overflow: hidden;
       cursor: pointer;
       &:hover {
         background-color: #eeeeee55;
@@ -88,6 +89,10 @@ function handlePageChange(i) {
       }
       .note-poster {
         max-width: 30%;
+      }
+      .note-desc {
+        word-break: break-all;
+        overflow: hidden;
       }
       .note-date {
         font-size: 1.2rem;
