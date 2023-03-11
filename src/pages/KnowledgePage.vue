@@ -1,12 +1,14 @@
 <template>
-  <div class="VPHero page--knowledge">
-
-    <div class="list-wrapper">
-      <div class="list-item card" v-for="(item, i) in knowledgeList" :key="item.index + '_' + i" @click="toPage(item.link)">
-        <div class="title">{{item.title}}</div>
-        <div class="desc">{{item.desc}}</div>
+  <div class="page--knowledge">
+    <section class="page-content">
+      <div class="list-wrapper">
+        <div class="list-item card" v-for="(item, i) in knowledgeList" :key="item.index + '_' + i" @click="toPage(item.link)">
+          <div class="title">{{item.title}}</div>
+          <div class="desc">{{item.desc}}</div>
+        </div>
       </div>
-    </div>
+    </section>
+
 
   </div>
 </template>
@@ -48,9 +50,12 @@ function toPage(path = '') {
 
 <style lang="scss" scoped>
 .page--knowledge {
-  max-width: 1152px;
-  margin: auto;
-  margin-top: 10rem;
+  position: relative;
+  padding: 0 24px;
+  .page-content {
+    max-width: 1152px;
+    margin: auto;
+  }
 
 
   .list-wrapper {
@@ -70,14 +75,33 @@ function toPage(path = '') {
     }
 
     .card {
-      border: 1px solid #eee;
-      border-radius: 4px;
-      padding: 1rem;
+      // border: 1px solid #eee;
+      border-radius: 1.2rem;
+      background-color: #f6f6f6;
+      padding: 2.4rem;
       width: 240px;
+      border: #00EAFF00 1px solid;
       &:hover {
-        border-color: #00EAFF;
+        border: #00EAFF 1px solid;
+        background-color: #fff;
       }
     }
   }
 }
+
+
+@media (min-width: 640px) {
+  .page--knowledge {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 960px) {
+  .page--knowledge {
+    padding: 0 64px;
+  }
+}
+
+
+
 </style>

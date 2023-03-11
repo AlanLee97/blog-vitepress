@@ -8,13 +8,25 @@
     --vp-home-hero-image-filter: blur(150px);
 
      /* brand按钮 */
-  --vp-button-brand-border: #00EAFF55;
-  --vp-button-brand-text: #fff;
-  --vp-button-brand-bg: #00EAFF;
+    --vp-button-brand-border: #00EAFF55;
+    --vp-button-brand-text: #fff;
+    --vp-button-brand-bg: #00EAFF;
 
-  --vp-button-brand-hover-border: #00EAFF55;
-  --vp-button-brand-hover-text: #fff;
-  --vp-button-brand-hover-bg: #00EAFF;
+    --vp-button-brand-hover-border: #00EAFF55;
+    --vp-button-brand-hover-text: #fff;
+    --vp-button-brand-hover-bg: #00EAFF;
 
-  --vp-button-brand-active-border: #00EAFF55;
+    --vp-button-brand-active-border: #00EAFF55;
+
+    --vp-x-theme-primary-color: #00eaff;
+
+    /* 覆盖主题色 */
+    --vp-c-green: #00EAFF;
+    --vp-c-green-light: #00EAFF99;
+    --vp-c-green-lighter: #00EAFF66;
+    --vp-c-green-dark: #05adbd99;
+    --vp-c-green-darker: #05adbd;
+    --vp-c-green-dimm-1: rgba(16, 185, 129, 0.05);
+    --vp-c-green-dimm-2: rgba(16, 185, 129, 0.2);
+    --vp-c-green-dimm-3: rgba(16, 160, 185, 0.5);
 }
