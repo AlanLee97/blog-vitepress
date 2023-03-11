@@ -4,7 +4,7 @@ layout: home
 hero:
   name: AlanLee の 知识库
   image:
-    src: /assets/images/notebook.svg
+    src: /assets/images/hero-knowledges.svg
     alt: VitePress
 # features:
 #   - icon: ⚡️

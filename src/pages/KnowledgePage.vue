@@ -63,7 +63,11 @@ function toPage(path = '') {
     flex-wrap: wrap;
 
     .list-item {
-      margin-right: 16px;
+      margin-right: 1.6rem;
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      margin-bottom: 2rem;
       cursor: pointer;
 
       .title {
@@ -75,15 +79,42 @@ function toPage(path = '') {
     }
 
     .card {
-      // border: 1px solid #eee;
       border-radius: 1.2rem;
       background-color: #f6f6f6;
       padding: 2.4rem;
-      width: 240px;
+      width: calc((100% - 60px) / 4);
       border: #00EAFF00 1px solid;
       &:hover {
         border: #00EAFF 1px solid;
         background-color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 960px) {
+    .list-wrapper {
+      .list-item {
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        &:nth-child(4n) {
+          margin-right: 1.6rem;
+        }
+      }
+      .card {
+        width: calc((100% - 40px) / 3);
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    .list-wrapper {
+      .list-item {
+        margin-right: 0 !important;
+      }
+      .card {
+        width: 100%;
+        min-width: 28rem;
       }
     }
   }
