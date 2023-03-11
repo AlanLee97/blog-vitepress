@@ -46,12 +46,15 @@ function setCurrentPage(i) {
 
   .list-wrapper {
     display: flex;
+    flex-wrap: wrap;
 
     .list-item {
       margin: 0 1rem;
+      margin-bottom: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-width: 3rem;
       width: 3rem;
       height: 3rem;
       border: 1px solid #eee;

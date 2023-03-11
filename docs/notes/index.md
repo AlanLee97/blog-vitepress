@@ -1,6 +1,8 @@
 ---
+layout: page
 aside: false
 sidebar: false
+lastUpdated: false
 ---
 
 <NoteListPage />

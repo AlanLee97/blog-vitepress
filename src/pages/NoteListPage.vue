@@ -1,19 +1,21 @@
 <template>
-  <div class="page--note-list">
-    <h1 class="title-bar">最近更新</h1>
-    <div class="note-list-wrapper">
-      <div class="note-list-item" v-for="(note, i) in currentNoteList" :key="'note_' + i" @click="toDetail(note.link)">
-        <div>
-          <h4 class="note-title">{{ note.title }}</h4>
-          <div class="note-desc">{{ note.desc }}</div>
-          <div class="note-date">{{ formatDate(note.updateTime) }}</div>
-        </div>
-        <div class="note-poster" v-if="note.poster">
-          <img :src="note.poster">
+  <div class="page--note-list page">
+    <section class="page-content">
+      <h1 class="title-bar">最近更新</h1>
+      <div class="note-list-wrapper">
+        <div class="note-list-item" v-for="(note, i) in currentNoteList" :key="'note_' + i" @click="toDetail(note.link)">
+          <div>
+            <h4 class="note-title">{{ note.title }}</h4>
+            <div class="note-desc">{{ note.desc }}</div>
+            <div class="note-date">{{ formatDate(note.updateTime) }}</div>
+          </div>
+          <div class="note-poster" v-if="note.poster">
+            <img :src="note.poster">
+          </div>
         </div>
       </div>
-    </div>
-    <Pagination :total="noteList.length" @change="handlePageChange" />
+      <Pagination :total="noteList.length" @change="handlePageChange" />
+    </section>
   </div>
 </template>
 
@@ -56,9 +58,16 @@ function handlePageChange(i) {
 .page--note-list {
   width: 100%;
 
+  .page-content {
+    max-width: 1152px;
+    margin: auto;
+  }
+
   .title-bar {
     line-height: 2;
     margin-bottom: 20px;
+    font-size: 2.8rem;
+    font-weight: bold;
   }
   .note-list-wrapper {
     width: 100%;
@@ -86,6 +95,24 @@ function handlePageChange(i) {
         margin-top: 1rem;
       }
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 0 36px;
+  }
+}
+
+@media (min-width: 640px) {
+  .page {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 960px) {
+  .page {
+    padding: 0 64px;
   }
 }
 </style>
