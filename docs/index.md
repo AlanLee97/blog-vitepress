@@ -13,17 +13,9 @@ hero:
       text: 笔记
       link: /notes/
     - theme: alt
+      text: 了解我
+      link: /about/
+    - theme: alt
       text: GitHub
       link: https://github.com/alanlee97
-# features:
-# - icon: ⚡️
-#   title: Vite, The DX that can't be beat
-#   details: Lorem ipsum...
-#   link: ''
-# - icon: 🖖
-#   title: Power of Vue meets Markdown
-#   details: Lorem ipsum...
-# - icon: 🛠️
-#   title: Simple and minimal, always
-#   details: Lorem ipsum...
 ---
