@@ -97,20 +97,79 @@ export function createSidebar() {
     ],
     "/knowledges/tech/": [
       {
+        text: "Java",
+        collapsed: false,
+        items: [
+          {
+            text: "框架相关",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/java/framework')
+          },
+          {
+            text: "SE",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/java/se')
+          },
+        ],
+      },
+      {
+        text: "数据库",
+        collapsed: false,
+        items: [
+          {
+            text: "MySQL",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/database/mysql')
+          },
+          {
+            text: "NoSQL",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/database/nosql')
+          },
+        ],
+      },
+      {
+        text: "移动端",
+        collapsed: false,
+        items: [
+          {
+            text: "Android",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/mobile-end/android')
+          },
+          {
+            text: "Flutter",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/mobile-end/flutter')
+          },
+        ],
+      },
+      {
         text: "数据结构&算法",
         collapsed: false,
         items: [
           {
             text: "算法",
-            collapsed: false,
+            collapsed: true,
             items: genSideBarItems('knowledges/tech/datastract-algorithm')
           },
         ],
       },
       {
         text: "设计模式",
-        collapsed: false,
+        collapsed: true,
         items: genSideBarItems('knowledges/tech/design-patten')
+      },
+      {
+        text: "服务器/操作系统",
+        collapsed: false,
+        items: [
+          {
+            text: "Linux-CentOS",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/server/linux-centos')
+          }
+        ],
       },
       {
         text: "工具",
@@ -118,8 +177,13 @@ export function createSidebar() {
         items: [
           {
             text: "Git",
-            collapsed: false,
+            collapsed: true,
             items: genSideBarItems('knowledges/tech/tool/git')
+          },
+          {
+            text: "Nginx",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/tool/nginx')
           },
           {
             text: "Docker",
@@ -127,12 +191,38 @@ export function createSidebar() {
             items: genSideBarItems('knowledges/tech/tool/docker')
           },
           {
-            text: "Linux",
+            text: "Elastic Search",
             collapsed: true,
-            items: genSideBarItems('knowledges/tech/tool/linux')
+            items: genSideBarItems('knowledges/tech/tool/elastic-search')
+          },
+          {
+            text: "Kubernetes",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/tool/kubernetes')
+          },
+          {
+            text: "Jenkins",
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/tool/jenkins')
           },
         ],
       },
+      {
+        text: "计算机网络",
+        collapsed: false,
+        items: genSideBarItems('knowledges/tech/tool/network')
+      },
+      {
+        text: "其他",
+        collapsed: false,
+        items: [
+          {
+            text: '流媒体知识',
+            collapsed: true,
+            items: genSideBarItems('knowledges/tech/other/media')
+          }
+        ]
+      }
     ],
   };
 }

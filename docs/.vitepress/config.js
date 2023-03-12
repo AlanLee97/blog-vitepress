@@ -34,6 +34,7 @@ export default {
     sidebarMenuLabel: '打开侧边栏',
     returnToTopLabel: '回到顶部',
     darkModeSwitchLabel: '黑暗模式',
+    lastUpdatedText: '最近更新',
     docFooter: {
       prev: '上一页',
       next: '下一页',
