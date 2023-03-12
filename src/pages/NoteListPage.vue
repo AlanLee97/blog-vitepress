@@ -26,14 +26,11 @@ import { ref } from 'vue'
 import Pagination from '../components/Pagination.vue';
 
 const data = useData()
-// console.log('alan->data', data)
 const router = useRouter()
 
 const noteList = ref(data.theme.value.localData.files)
 const currentNoteList = ref([])
 currentNoteList.value = noteList.value.slice(0, 5)
-// console.log('alan->noteList', noteList.value)
-
 
 function toDetail(path) {
   if(path) {
@@ -44,7 +41,7 @@ function toDetail(path) {
 }
 
 function formatDate(date) {
-  date = new Date(date);
+  date = new Date(new Date(date).getTime() + 8 * 60 * 60 * 1000);
   return date.toISOString().replace('T', ' ').split('.')[0]
 }
 
@@ -77,7 +74,7 @@ function handlePageChange(i) {
       display: flex;
       justify-content: space-between;
       border-top: 1px solid #eee;
-      height: 160px;
+      // height: 160px;
       overflow: hidden;
       cursor: pointer;
       &:hover {
@@ -86,6 +83,8 @@ function handlePageChange(i) {
       .note-title {
         margin-bottom: 1.2rem;
         line-height: 2;
+        font-size: 1.8rem;
+        font-weight: bold;
       }
       .note-poster {
         max-width: 30%;
