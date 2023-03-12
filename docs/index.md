@@ -16,6 +16,6 @@ hero:
       text: 了解我
       link: /about/
     - theme: alt
-      text: GitHub
-      link: https://github.com/alanlee97
+      text: 知识库
+      link: /knowledges/
 ---

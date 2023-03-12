@@ -336,6 +336,10 @@ const bookList = [
 
   @media(max-width: 640px) {
     .page-content {
+      .header, .skill-tree, .description, .reading {
+        padding: 0 4.8rem;
+      }
+
       .header {
         z-index: 9;
         flex-direction: column;
