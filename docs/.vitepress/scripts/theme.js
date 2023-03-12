@@ -85,6 +85,16 @@ export function createSidebar() {
         ]
       },
       {
+        text: "微信小程序",
+        collapsed: true,
+        items: genSideBarItems('knowledges/frontend/miniprogram')
+      },
+      {
+        text: "Electron",
+        collapsed: true,
+        items: genSideBarItems('knowledges/frontend/electron')
+      },
+      {
         text: "浏览器",
         collapsed: true,
         items: genSideBarItems('knowledges/frontend/browser')
