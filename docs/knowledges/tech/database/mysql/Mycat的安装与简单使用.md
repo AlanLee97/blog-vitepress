@@ -176,7 +176,7 @@ cd bin
 
 2. 创建表
 
-```mysql
+```bash
 use zdxh;
 create table employee (id int not null primary key,name varchar(100),sharding_id int not null);
 ```
@@ -185,7 +185,7 @@ create table employee (id int not null primary key,name varchar(100),sharding_id
 
 3. 往mycat中插入数据
 
-```mysql
+```bash
 INSERT INTO EMPLOYEE(ID,NAME,SHARDING_ID) VALUES(1, 'I am db1',10000);
 INSERT INTO EMPLOYEE(ID,NAME,SHARDING_ID) VALUES(2, 'I am db2',10010);
 INSERT INTO EMPLOYEE(ID,NAME,SHARDING_ID) VALUES(3, 'I am db3',10020);

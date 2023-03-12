@@ -492,11 +492,11 @@ public class IndexController {
 
 测试5个接口地址
 
-- [http://localhost:8080/user/admin](http://localhost:8080/user/admin)
-- [http://localhost:8080/user/login](http://localhost:8080/user/login)
-- [http://localhost:8080/user/logout/username](http://localhost:8080/user/logout/username)
-- [http://localhost:8080/user/student](http://localhost:8080/user/student)
-- [http://localhost:8080/user/teacher](http://localhost:8080/user/teacher)
+- `http://localhost:8080/user/admin`
+- `http://localhost:8080/user/login`
+- `http://localhost:8080/user/logout/username`
+- `http://localhost:8080/user/student`
+- `http://localhost:8080/user/teacher`
 
 先访问admin，此时未登录，自动跳转到/user/unlogin，输出提示信息和登录的接口地址，前端可根据输出的信息自行处理
 

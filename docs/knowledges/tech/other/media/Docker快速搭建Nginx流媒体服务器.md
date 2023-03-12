@@ -160,15 +160,15 @@ netstat -ntpl | grep 1935
 
 ![](https://cdn.nlark.com/yuque/0/2021/png/743297/1632039282727-375c855b-c657-41f1-b21f-04321eed53c6.png#alt=img)
 
-拉流地址的格式为：[http://localhost:8080/live/$STREAM_NAME.m3u8](http://localhost:8080/live/$STREAM_NAME.m3u8)
+拉流地址的格式为：`http://localhost:8080/live/$STREAM_NAME.m3u8`
 
-所以我们这里的拉流地址为：[http://47.xxx.xxx.62:8080/live/alanlee.m3u8](http://47.xxx.xxx.62:8080/live/alanlee.m3u8)
+所以我们这里的拉流地址为：`http://47.xxx.xxx.62:8080/live/alanlee.m3u8`
 
 ![](https://cdn.nlark.com/yuque/0/2021/png/743297/1632043364901-8c77ce74-615b-4653-9823-aff41b4bb183.png#alt=img)
 
 **也可以使用rtmp协议地址播放视频**
 
-拉流地址的格式为：[http://localhost:1935/$STREAM_NAME](http://localhost:1935/$STREAM_NAME)
+拉流地址的格式为：`http://localhost:1935/$STREAM_NAME`
 
 所以我们这里的拉流地址为：[http://47.xxx.xxx.62:1935/alanlee](http://47.xxx.xxx.62:1935/alanlee)
 

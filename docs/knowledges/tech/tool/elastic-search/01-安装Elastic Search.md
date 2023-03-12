@@ -13,7 +13,7 @@
 
 浏览器访问
 
-[http://localhost:9200/](http://localhost:9200/)
+`http://localhost:9200/`
 
 返回如下json数据表示成功
 
@@ -43,7 +43,7 @@
 
 出现如下图表示成功
 
-浏览器访问http://localhost:5601/app/kibana#/home
+浏览器访问`http://localhost:5601/app/kibana#/home`
 
 ![](https://alanlee-image-bed.oss-cn-shenzhen.aliyuncs.com/note_images/20200315113032-241900.png#alt=image-20200315113028103)
 

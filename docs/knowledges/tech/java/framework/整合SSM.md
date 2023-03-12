@@ -267,7 +267,7 @@
 
 在resources文件夹下创建log4j.properties，内容如下
 
-```properties
+```bash
 log4j.rootLogger=INFO,DEBUG,CONSOLE,file
 log4j.logger.com.jingze=debug
 log4j.logger.com.ibatis=info 
@@ -290,7 +290,7 @@ log4j.appender.CONSOLE.layout.ConversionPattern= %-d{yyyy-MM-dd HH:mm:ss} [%5p]-
 
 在resources文件夹下创建jdbc.properties，内容如下
 
-```properties
+```bash
 jdbc.user=root
 jdbc.password=123456
 jdbc.driver=com.mysql.jdbc.Driver
@@ -642,7 +642,7 @@ public interface UserMapper {
 
 ### jdbc.properties
 
-```properties
+```bash
 jdbc.user=root
 jdbc.password=123456
 jdbc.driver=com.mysql.jdbc.Driver
@@ -651,7 +651,7 @@ jdbc.url=jdbc:mysql://localhost:3306/ssm_template?useUnicode=true&characterEncod
 
 ### log4j.properties
 
-```pro
+```bash
 log4j.rootLogger=INFO,DEBUG,CONSOLE,file
 log4j.logger.com.jingze=debug
 log4j.logger.com.ibatis=info 
@@ -682,11 +682,11 @@ log4j.appender.CONSOLE.layout.ConversionPattern= %-d{yyyy-MM-dd HH:mm:ss} [%5p]-
 
 ![](https://alanlee-image-bed.oss-cn-shenzhen.aliyuncs.com/note_images/20200413221220-515093.png#alt=image-20200413170803452)
 
-### 浏览器输入http://localhost:8081/ssm/
+### 浏览器输入`http://localhost:8081/ssm/`
 
 ![](https://alanlee-image-bed.oss-cn-shenzhen.aliyuncs.com/note_images/20200413170139-593578.png#alt=image-20200413170139159)
 
-### 浏览器输入http://localhost:8081/ssm/user/get/all，输出json数据
+### 浏览器输入`http://localhost:8081/ssm/user/get/all，输出json数据`
 
 ![](https://alanlee-image-bed.oss-cn-shenzhen.aliyuncs.com/note_images/20200413170419-946799.png#alt=image-20200413170412413)
 

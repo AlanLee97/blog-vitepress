@@ -24,7 +24,7 @@ service memcached start
 
 添加如下语句，打印出sessionId
 
-```jsp
+```bash
 <h1>
     SessionID: 
     <%= session.getId() %>

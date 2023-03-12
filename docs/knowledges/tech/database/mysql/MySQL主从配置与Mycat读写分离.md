@@ -6,7 +6,7 @@
 编辑配置文件
 
 添加如下内容
-```conf
+```bash
 server-id=1
 binlog-do-db=master_db1 #备份的数据库
 log-bin=mysql-bin
@@ -21,7 +21,7 @@ binlog-ignore-db=mysql
 
 3. 
 创建一个允许从服务器来访问的用户(主服务器)：
-```mysql
+```bash
 grant replication slave on *.* to 'root'@'%' identified by '123456';
 
 GRANT FILE ON *.* TO 'root'@'%' IDENTIFIED BY '123456';
@@ -47,7 +47,7 @@ IDENTIFIED BY 123456：Slave使用的密码
 
 4. 
 查看配置的信息
-```mysql
+```bash
 show master status \G;
 ```
 
@@ -64,7 +64,7 @@ show master status \G;
 
 1. 编辑配置文件my.cnf，在[mysqld]下面添加这段内容
 
-```mysql
+```bash
 log-bin=mysql-bin
 server-id=2
 # 忽略日志的db
@@ -82,7 +82,7 @@ slave-net-timeout=60
 
 2. 关联Master信息
 
-```mysql
+```bash
 stop slave;
 
 CHANGE MASTER TO MASTER_HOST='192.168.1.20',MASTER_USER='root',MASTER_PASSWORD='123456',MASTER_PORT=3306,MASTER_LOG_FILE='mysql-bin.000001',MASTER_CONNECT_RETRY=60,MASTER_LOG_POS=154;
@@ -97,7 +97,7 @@ start slave;
 
 3. 查看状态
 
-```mysql
+```bash
 show slave status \G;
 ```
 
@@ -185,7 +185,7 @@ show slave status \G;
 
 **count关键字查询**
 
-```mysql
+```bash
 select count(id) from test;
 ```
 
@@ -193,7 +193,7 @@ select count(id) from test;
 
 **like关键字查询**
 
-```mysql
+```bash
 select * from test where name like '%alanlee%';
 ```
 
@@ -201,7 +201,7 @@ select * from test where name like '%alanlee%';
 
 **=查询**
 
-```mysql
+```bash
 select * from test where name = 'alanlee';
 ```
 
@@ -209,7 +209,7 @@ select * from test where name = 'alanlee';
 
 **insert**
 
-```mysql
+```bash
 insert into test(name) values('libuguan');
 ```
 
@@ -217,7 +217,7 @@ insert into test(name) values('libuguan');
 
 **update**
 
-```mysql
+```bash
 update test set name = 'libuguan-007' where name = 'libuguan';
 ```
 
@@ -225,7 +225,7 @@ update test set name = 'libuguan-007' where name = 'libuguan';
 
 **delete**
 
-```mysql
+```bash
 delete from test where name = 'libuguan-007';
 ```
 
@@ -241,7 +241,7 @@ delete from test where name = 'libuguan-007';
 
 **count关键字查询**
 
-```mysql
+```bash
 select count(*) from test;
 ```
 
@@ -249,7 +249,7 @@ select count(*) from test;
 
 **like关键字查询**
 
-```mysql
+```bash
 select * from test where name like '%alanlee%';
 ```
 
@@ -257,7 +257,7 @@ select * from test where name like '%alanlee%';
 
 **=查询**
 
-```mysql
+```bash
 select * from test where name = 'alanlee';
 ```
 
@@ -265,7 +265,7 @@ select * from test where name = 'alanlee';
 
 **insert**
 
-```mysql
+```bash
 insert into test(name) values('libuguan-01');
 ```
 
@@ -273,7 +273,7 @@ insert into test(name) values('libuguan-01');
 
 **update**
 
-```mysql
+```bash
 update test set name = 'libuguan-02' where name = 'libuguan-01';
 ```
 
@@ -281,7 +281,7 @@ update test set name = 'libuguan-02' where name = 'libuguan-01';
 
 **delete**
 
-```mysql
+```bash
 delete from test where name = 'libuguan-02';
 ```
 
@@ -347,7 +347,7 @@ slave-net-timeout=60
 命令行输入
 
 
-```mysql
+```bash
 CHANGE MASTER TO MASTER_HOST='192.168.1.20',MASTER_USER='root',MASTER_PASSWORD='123456',MASTER_PORT=3306,MASTER_LOG_FILE='mysql-bin.000001',MASTER_CONNECT_RETRY=60,MASTER_LOG_POS=154;
 ```
 
@@ -372,7 +372,7 @@ CHANGE MASTER TO MASTER_HOST='192.168.1.20',MASTER_USER='root',MASTER_PASSWORD='
 
 在主MySQL服务器中命令行执行
 
-```mysql
+```bash
 # 赋予Slave机器有File权限
 GRANT FILE ON *.* TO 'root'@'%' IDENTIFIED BY '123456';
 # 刷新权限

@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pretask": "node scripts/index.js",
     "docs:dev": "npm run pretask && vitepress dev docs --port 5175",
-    "docs:build": "vitepress build docs",
+    "docs:build": "npm run pretask && vitepress build docs",
     "docs:preview": "npm run docs:build && vitepress preview docs"
   },
   "keywords": [],

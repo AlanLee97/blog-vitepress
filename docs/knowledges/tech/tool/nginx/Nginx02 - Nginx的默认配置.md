@@ -2,7 +2,7 @@
 
 nginx.conf
 
-```conf
+```bash
 
 #user  nobody;
 worker_processes  1;

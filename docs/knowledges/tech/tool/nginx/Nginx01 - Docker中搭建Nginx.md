@@ -86,7 +86,7 @@ nginx
 
 nginx.conf
 
-```conf
+```bash
 
 user  root;
 worker_processes  1;

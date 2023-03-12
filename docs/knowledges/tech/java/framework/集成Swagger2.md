@@ -62,7 +62,7 @@ public class SwaggerConfig {
 
 ## 测试
 
-浏览器输入地址http://localhost:8080/swagger-ui.html
+浏览器输入地址`http://localhost:8080/swagger-ui.html`
 
 ![](https://gitee.com/AlanLee97/public-asset/raw/master/note_images/image-20200518172715646.png#alt=image-20200518172715646)
 
@@ -78,11 +78,11 @@ public class SwaggerConfig {
 
 paramType：参数放在哪个地方
 
-header 请求参数的获取：[@RequestHeader ](/RequestHeader ) 
+header 请求参数的获取：/RequestHeader
 
-query 请求参数的获取：[@RequestParam ](/RequestParam ) 
+query 请求参数的获取：/RequestParam
 
-path（用于restful接口） 请求参数的获取：[@PathVariable ](/PathVariable ) 
+path（用于restful接口） 请求参数的获取：/PathVariable
 
 body（不常用）
 
@@ -112,4 +112,4 @@ response：抛出异常的类
 
 @ApiModel：使用在实体类上，描述实体类。
 
-[@ApiModelProperty ](/ApiModelProperty ) ：使用在实体类上的成员变量上，描述成员变量的含义。 
+/ApiModelProperty ：使用在实体类上的成员变量上，描述成员变量的含义。 

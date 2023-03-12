@@ -202,9 +202,9 @@ User{id=1, username='AlanLee', password='123456'}
 
 除了@Component注解，之外还有其他注解，如Web开发中的常用注解
 
-- [@Controller ](/Controller ) 表示这是控制器层 
-- [@Service ](/Service ) 表示这是业务层 
-- [@Repository ](/Repository ) 表示这是数据访问层 
+- /Controller 表示这是控制器层 
+- /Service 表示这是业务层 
+- /Repository 表示这是数据访问层 
 
 这3个注解与@Component注解效果一样，只是在名字上区分，让程序员一眼就能看出来这是哪一层
 

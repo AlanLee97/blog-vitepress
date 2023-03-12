@@ -33,7 +33,7 @@ vim /etc/keepalived/keepalived.conf
 
 keepalived.conf
 
-```conf
+```bash
 ! Configuration File for keepalived
 
 global_defs {
@@ -115,7 +115,7 @@ vim /etc/keepalived/keepalived.conf
 
 keepalived.conf
 
-```conf
+```bash
 ! Configuration File for keepalived
 
 global_defs {
