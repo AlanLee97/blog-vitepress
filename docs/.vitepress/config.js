@@ -33,6 +33,11 @@ export default {
     outlineTitle: '目录概览',
     sidebarMenuLabel: '打开侧边栏',
     returnToTopLabel: '回到顶部',
+    darkModeSwitchLabel: '黑暗模式',
+    docFooter: {
+      prev: '上一页',
+      next: '下一页',
+    },
     footer: {
       // message: 'Released under the MIT License.',
       copyright: "Copyright © 2023-present AlanLee",
