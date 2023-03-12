@@ -1,7 +1,7 @@
-import { filesData, genLastUpdatedFiles } from './scripts/index.js'
-import { createSidebar } from './scripts/theme.js'
-
-genLastUpdatedFiles()
+// import { filesData, genLastUpdatedFiles } from './scripts/index.js'
+import { createSidebar } from './scripts/theme.js';
+import filesData from '../public/data/allFiles.json';
+// genLastUpdatedFiles()
 
 let sidebar = createSidebar()
 

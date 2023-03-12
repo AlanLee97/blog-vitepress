@@ -1,12 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  cross-spawn: ^7.0.3
   node-sass: ^8.0.0
   sass: ^1.58.3
   vitepress: 1.0.0-alpha.49
   vue: ^3.2.47
 
 devDependencies:
+  cross-spawn: 7.0.3
   node-sass: 8.0.0
   sass: 1.58.3
   vitepress: 1.0.0-alpha.49_sass@1.58.3
