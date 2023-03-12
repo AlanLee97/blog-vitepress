@@ -61,6 +61,7 @@ function setCurrentPage(i) {
   if(i < 0) return;
   currentPage.value = i
   emit('change', i)
+  window && window.scrollTo(0, 0)
 }
 </script>
 
