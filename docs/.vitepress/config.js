@@ -30,6 +30,9 @@ export default {
     ],
     sidebar: sidebar,
     socialLinks: [{ icon: "github", link: "https://github.com/alanlee97" }],
+    outlineTitle: '目录概览',
+    sidebarMenuLabel: '打开侧边栏',
+    returnToTopLabel: '回到顶部',
     footer: {
       // message: 'Released under the MIT License.',
       copyright: "Copyright © 2023-present AlanLee",

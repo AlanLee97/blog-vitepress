@@ -6,10 +6,15 @@
           class="list-item app-item"
           v-for="(item, index) in appList"
           :key="'tool_' + index"
-          @click="toPage(item)"
+          @click="toPage(item.link)"
         >
           <div class="poster-wrapper">
-            <img class="poster" src="../assets/images/poster.png" />
+            <img v-if="item.poster" class="poster" :src="item.poster" />
+            <div v-else class="poster-bgcolor" :style="{backgroundColor: getRandomBgColor()}">
+              <div class="name-poster">
+                {{ item.name }}
+              </div>
+            </div>
           </div>
           <div class="card-content">
             <h3 class="title">
@@ -24,15 +29,26 @@
 </template>
 
 <script setup>
-import { withBase } from "vitepress";
+import { useData, useRouter } from "vitepress";
 import { ref } from "vue";
+
+const data = useData();
+
+
+const router = useRouter();
+
+const bgColors = [
+  '#edf8ef',
+  '#ecf6f9',
+  '#fff2ef'
+]
 
 const list = [
   {
     name: "语你晚安",
-    poster: "",
-    desc: "订阅晚安然后想你推送「晚安」的小程序",
-    link: "/good-night",
+    poster: "https://cdn.nlark.com/yuque/0/2022/jpeg/743297/1669559110991-734a4ac2-3149-421e-b148-8a2e7f813e26.jpeg",
+    desc: "订阅晚安然后向你推送「晚安」的小程序",
+    link: "apps/语你晚安",
   },
   {
     name: "AlanLeeの工具箱",
@@ -42,15 +58,15 @@ const list = [
   },
   {
     name: "el-dragmove",
-    poster: "",
+    poster: "https://cdn.nlark.com/yuque/0/2022/jpeg/743297/1669554072209-49076c99-be57-495d-9704-6bf561387ba5.jpeg",
     desc: "我开源的轻量级的元素拖动js库",
     link: "https://github.com/AlanLee97/el-dragmove",
   },
   {
     name: "核酸批量查询",
-    poster: "",
+    poster: "https://cdn.nlark.com/yuque/0/2022/jpeg/743297/1669555078763-6d79a003-dfc5-4e78-81b3-486fbb6d6341.jpeg",
     desc: "一个PC端的核酸批量查询工具",
-    path: "/detection-batch-query",
+    link: "apps/核酸批量查询",
   },
   {
     name: "U-UI-D",
@@ -60,7 +76,7 @@ const list = [
   },
   {
     name: "熊猫约拍",
-    poster: "",
+    poster: "https://cdn.nlark.com/yuque/0/2022/jpeg/743297/1669559789853-c59d2bd6-4353-4f84-a4d2-263333f8763f.jpeg",
     desc: "大学参赛项目",
     link: "https://gitee.com/Panda_Appointment",
   },
@@ -80,12 +96,25 @@ const list = [
 
 const appList = ref(list);
 
-function toPage(item) {
-  // if (item.path) {
-  //   $router.push({path: item.path})
-  // } else if (item.link) {
-  //   window.open(item.link)
-  // }
+function getBase() {
+  return data.site.value.base || '';
+}
+
+function toPage(link = '') {
+  if(link) {
+    if(link.startsWith('http')) {
+      window.open(link)
+    } else {
+      link = (getBase() + link + '').replaceAll('//', '/')
+      router.go(link)
+    }
+  }
+}
+
+function getRandomBgColor() {
+  let bgcolor = bgColors[Math.floor(Math.random() * bgColors.length)]
+  console.log(bgcolor);
+  return bgcolor
 }
 </script>
 
@@ -113,8 +142,8 @@ function toPage(item) {
     width: 100%;
 
     .list-item {
-      margin-right: 16px;
-      margin-bottom: 16px;
+      margin-right: 1.6rem;
+      margin-bottom: 1.6rem;
       cursor: pointer;
     }
 
@@ -144,6 +173,27 @@ function toPage(item) {
           height: 100%;
           object-fit: cover;
         }
+
+        .poster-bgcolor {
+          width: 100%;
+          height: 100%;
+
+          .name-poster {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+            font-size: 2.4rem;
+            font-weight: bold;
+            padding: 2rem;
+            font-style: oblique;
+            color: #fff;
+            line-height: 1.6;
+            // text-shadow: #00000088 1px 2px 8px;
+          }
+        }
       }
 
       .card-content {
@@ -162,6 +212,21 @@ function toPage(item) {
     }
   }
 
+  @media(max-width: 960px) {
+    .app-list-wrapper {
+      .app-item {
+        // margin: auto !important;
+        margin-bottom: 2rem !important;
+        width: calc((100% - 44px) / 3);
+        &:nth-child(4n) {
+          margin-right: 1.6rem;
+        }
+        &:nth-child(3n) {
+          margin-right: 0rem;
+        }
+      }
+    }
+  }
 
 
   @media(max-width: 768px) {
