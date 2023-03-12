@@ -61,6 +61,13 @@
         </div>
       </section>
 
+      <section class="skill-tree mt36">
+        <div class="title">技能树</div>
+        <div class="img-wrapper">
+          <img src="https://cdn.nlark.com/yuque/0/2023/jpeg/743297/1678603939562-48f9a74e-75ff-4afd-9fbc-1679d868fc97.jpeg" alt="技能树" />
+        </div>
+      </section>
+
       <section class="reading mt36">
         <div class="title-divider">
           <h3 class="title">读书</h3>
@@ -238,6 +245,15 @@ const bookList = [
       }
     }
 
+    .skill-tree {
+      .title {
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+    }
+
     .reading {
       .title-divider {
         display: flex;
@@ -280,7 +296,7 @@ const bookList = [
 
   @media(max-width: 1152px) {
     .page-content {
-      .header, .description, .reading {
+      .header, .skill-tree, .description, .reading {
         padding: 0 6.4rem;
       }
 
@@ -300,7 +316,7 @@ const bookList = [
 
   @media(max-width: 768px) {
     .page-content {
-      .header, .description, .reading {
+      .header, .skill-tree, .description, .reading {
         padding: 0 6.4rem;
       }
 
